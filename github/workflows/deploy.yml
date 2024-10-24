@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment
+        run: echo "VITE_APP_OPENAI_API_KEY=${{ secrets.VITE_APP_OPENAI_API_KEY }}" >> $GITHUB_ENV
+
+     
+      - name: Run your OpenAI-related scripts
+        run: |
+          # Теперь API ключ доступен в переменной окружения и может быть использован в скрипте
+          node your-script.js
