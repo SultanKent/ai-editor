@@ -1,0 +1,164 @@
+/* Service.scss */
+$primary-color: #4a90e2;
+$accent-color: #f39c12;
+$background-color: #f0f4f8;
+$text-color: #333;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+
+@mixin transition($properties: all, $duration: 0.3s, $timing-function: ease) {
+  transition: $properties $duration $timing-function;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-page {
+  padding: 60px 20px;
+  background-color: $background-color;
+  min-height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+  animation: fadeIn 1s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.services-title {
+  font-size: 36px;
+  color: $primary-color;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  animation: slideIn 0.8s ease-in-out forwards;
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: $accent-color;
+    border-radius: 2px;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px $box-shadow-color;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  @include transition(transform, 0.3s);
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px $box-shadow-color;
+
+    .card-background {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+  }
+
+  .card-background {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: $accent-color;
+    opacity: 0.1;
+    transform: rotate(30deg);
+    border-radius: 50%;
+    @include transition(all, 0.5s ease-in-out);
+  }
+
+  .service-title {
+    font-size: 22px;
+    color: $primary-color;
+    margin-bottom: 10px;
+    @include transition(color, 0.3s);
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  .service-description {
+    font-size: 16px;
+    color: $text-color;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    @include transition(background-color);
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+/* Анимация появления сетки */
+@keyframes gridFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card:nth-child(odd) {
+  animation: gridFadeIn 0.6s ease-in-out;
+}
+
+.service-card:nth-child(even) {
+  animation: gridFadeIn 0.6s ease-in-out 0.2s;
+}

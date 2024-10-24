@@ -1,0 +1,32 @@
+@import 'variables';
+
+.app {
+  background-color: $background-color;
+  color: $text-color;
+  padding: 0rem 3rem;
+
+  header {
+    margin-bottom: 2rem;
+
+    h1 {
+      color: black;
+      font-size: 2.5rem;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+.start {
+  text-decoration: none;
+  color: white;
+}
+
+h1, h2, h3, h4, p, li, a {
+  font-family: "Playwrite GB S", cursive;
+  font-weight: 400;
+}
