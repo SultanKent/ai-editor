@@ -125,3 +125,35 @@
     }
   }
   
+
+  @media (max-width: 1400px) {
+    .header-content {
+      gap: 200px;
+    }
+  }
+
+  @media (max-width: 1040px) {
+    .nav-links {
+      display: none;
+    }
+    .header-content {
+      flex-direction: column;
+      gap: 100px;
+      .header-content-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+
+  @media(max-width: 600px) {
+    .app header h1 {
+      font-size: 2rem!important;
+    }
+    .header-content .header-content-right > img {
+      height: 300px;
+      width: 300px;
+    }
+  }

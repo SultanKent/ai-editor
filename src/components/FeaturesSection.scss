@@ -71,3 +71,18 @@
     }
   }
   
+  @media (max-width: 1040px) {
+    .features-grid {
+      flex-direction: column;
+      align-items: center;
+      .feature-card {
+        width: 80%!important;
+      }
+    }
+  }
+
+  @media(max-width: 600px) {
+    .features-section .features-container h1 {
+      font-size: 2rem;
+    }
+  }

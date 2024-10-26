@@ -133,3 +133,24 @@
     }
   }
   
+  @media (max-width: 1040px) {
+    .footer .footer-container .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 20rem);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer .footer-container {flex-direction: column; align-items: center;} .footer-links {
+      display: flex!important;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer .footer-bottom .footer-terms {
+      flex-direction: column;
+    }
+  }

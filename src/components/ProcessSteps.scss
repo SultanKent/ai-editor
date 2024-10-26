@@ -68,3 +68,18 @@
     }
   }
   
+  @media (max-width: 1040px) {
+    .steps-grid {
+      flex-direction: column;
+      align-items: center;
+      .step-card {
+        width: 80%!important;
+      }
+    }
+  }
+
+  @media(max-width: 600px) {
+    .process-steps .process-container h1 {
+      font-size: 1.7rem;
+    }
+  }
