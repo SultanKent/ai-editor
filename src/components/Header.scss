@@ -149,6 +149,9 @@
   }
 
   @media(max-width: 600px) {
+  header {
+    background-color: none!important;
+  }
     .app header h1 {
       font-size: 2rem!important;
     }
